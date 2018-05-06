@@ -118,9 +118,8 @@ def LaneDetectAdv(img):
     # HLS S-channel Threshold
     img_S_Thresh = hls_S_thresh(img_unwarp, (35, 255))
     
-    # Combine HLS and Lab B channel thresholds
+    # Combine HLS and sobel absolution
     combined = np.zeros_like(img_S_Thresh)
-    #combined[((img_sobelMag == 1) & (img_sobelDir == 1) & (img_S_Thresh == 1))] = 1
     combined[((img_sobelAbs==1) & (img_S_Thresh == 1))] = 1
     return combined, Minv
 ```
@@ -139,6 +138,8 @@ def LaneDetectAdv(img):
 
 # Calculate Radius of Curvature and Center Distance 
 
+Formula :
+![png](Formula.png)
 
 ```python
 def calc_curv_rad_and_center_dist(bin_img, l_fit, r_fit, l_lane_inds, r_lane_inds):
