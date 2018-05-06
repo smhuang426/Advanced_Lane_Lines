@@ -204,3 +204,9 @@ def draw_data(original_img, curv_rad, center_dist):
 ```
 
 ![png](output_36_1.png)
+
+[![Watch the final result video]](https://youtu.be/2jHD5qOYyqU)
+
+# Discussion
+
+My way is not good for more challenge case, because S-channel threshold is badly when image is blur, it will lose some lane line information. But after birds-eye view process, my further view will get blur result. I need to find some better way to do binarization.
