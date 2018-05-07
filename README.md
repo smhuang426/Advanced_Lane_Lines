@@ -163,7 +163,7 @@ def calc_curv_rad_and_center_dist(bin_img, l_fit, r_fit, l_lane_inds, r_lane_ind
     rightx = nonzerox[r_lane_inds]
     righty = nonzeroy[r_lane_inds]
     
-    if len(leftx) != 0 & len(rightx) != 0:
+    if len(leftx) is not 0 and len(rightx) is not 0:
         # Fit new polynomials to x,y in world space
         left_fit_cr = np.polyfit(lefty*ym_per_pix, leftx*xm_per_pix, 2)
         right_fit_cr = np.polyfit(righty*ym_per_pix, rightx*xm_per_pix, 2)
